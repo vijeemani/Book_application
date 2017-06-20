@@ -1,6 +1,8 @@
 package com.rev.pubhub.controller;
 
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,7 +26,7 @@ public class UserController {
 		return "register";
 	}
 	@PostMapping("/save")
-	public String add_user(@RequestParam("name")String name,@RequestParam("email") String email,@RequestParam("password")String password){
+	public String add_user(@RequestParam("name")String name,@RequestParam("email") String email,@RequestParam("password")String password,HttpSession session){
 	
 	user.setName(name);
     user.setEmail(email);
@@ -43,6 +45,12 @@ public class UserController {
 		userRepo.findByEmailAndPassword(email, password);
 		System.out.println("User logedin as "+email);
 		return "board";
+		
+	}
+	@GetMapping("/logout")
+	public String signOut(HttpSession session){
+		session.invalidate();
+		return "redirect:/";
 		
 	}
 	

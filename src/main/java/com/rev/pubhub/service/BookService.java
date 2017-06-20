@@ -17,7 +17,7 @@ public class BookService {
 	public List<Book> findAll() {
 		return bookRepository.findAll();
 	}
-
+	
 /*	public Book findOne(Long id) {
 		return bookRepository.findOne(id);
 	}

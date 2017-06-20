@@ -63,7 +63,7 @@ i, a, h1, h2, h3, h4, h5, h6 {
 		<div id="demoAcc"
 			class="w3-bar-block w3-hide w3-padding-large w3-medium">
 			<a href="#" class="w3-bar-item w3-button w3-light-grey"><i
-				class="fa fa-caret-right w3-margin-right"></i>Fiction</a> <a href="#"
+				class="w3-bar-item w3-button"></i>Fiction</a> <a href="#"
 				class="w3-bar-item w3-button">Fantacy</a> <a href="#"
 				class="w3-bar-item w3-button">Biography</a> <a href="#"
 				class="w3-bar-item w3-button">Romance</a>

@@ -15,10 +15,13 @@
 	href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
 .w3-sidebar a {
 	font-family: "Roboto", sans-serif
@@ -27,8 +30,11 @@
 body, h1, h2, h3, h4, h5, h6, .w3-wide {
 	font-family: "Montserrat", sans-serif;
 }
-header{
-margin-top=: 100px;}
+
+header {
+	margin-top =: 100px;
+}
+
 footer {
 	background-color: #f4511e;
 	text-indent: 50px;
@@ -39,12 +45,16 @@ footer {
 i, a, h1, h2, h3, h4, h5, h6 {
 	color: #f4511e;
 }
-i{
-  margin-top: 0;
+
+p {
+	margin-top: 30px;
 }
-table{
-align:center;
- margin-top: 30px; }
+
+table {
+	align: center;
+	margin-top: 30px;
+}
+
 .logo-small {
 	color: #f4511e;
 	font-size: 50px;
@@ -55,12 +65,10 @@ align:center;
 	font-size: 200px;
 }
 
-.center
-{
-  margin: 30px;
-    width: 60%;
-   
-    padding: 10px;
+.center {
+	margin: 30px;
+	width: 60%;
+	padding: 10px;
 }
 </style>
 <body class="w3-content" style="max-width: 1200px">
@@ -73,7 +81,7 @@ align:center;
 		<i onclick="w3_close()"
 			class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
 		<h3 class="w3-wide">
-			<b>LOGO</b>
+			<b>PubHub200</b>
 		</h3>
 	</div>
 	<div class="w3-padding-64 w3-large w3-text-grey"
@@ -87,10 +95,11 @@ align:center;
 		<div id="demoAcc"
 			class="w3-bar-block w3-hide w3-padding-large w3-medium">
 			<a href="#" class="w3-bar-item w3-button w3-light-grey"><i
-				class="fa fa-caret-right w3-margin-right"></i>Fiction</a> <a href="#"
+				class="w3-bar-item w3-button"></i>Fiction</a> <a href="#"
 				class="w3-bar-item w3-button">Fantacy</a> <a href="#"
-				class="w3-bar-item w3-button">Biography</a> <a href="#"
+				class="w3-bar-item w3-button">Education</a> <a href="#"
 				class="w3-bar-item w3-button">Romance</a>
+
 		</div>
 		<a href="../books/booklist" class="w3-bar-item w3-button"><lable
 				color="#f4511e"> View all Books </lable> </a>
@@ -99,16 +108,8 @@ align:center;
 	</nav>
 
 
-	<!-- Top menu on small screens -->
-	<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
-	<div class="w3-bar-item w3-padding-24 w3-wide">LOGO</div>
-	<a href="javascript:void(0)"
-		class="w3-bar-item w3-button w3-padding-24 w3-right"
-		onclick="w3_open()"><i class="fa fa-bars"></i></a> </header>
 
-	<!-- Overlay effect when opening sidebar on small screens -->
-	<div class="w3-overlay w3-hide-large" onclick="w3_close()"
-		style="cursor: pointer" title="close side menu" id="myOverlay"></div>
+
 
 	<!-- !PAGE CONTENT! -->
 	<div class="w3-main" style="margin-left: 250px">
@@ -116,38 +117,40 @@ align:center;
 		<!-- Push down content on small screens -->
 		<div class="w3-hide-large" style="margin-top: 100px"></div>
 
-		<header class="w3-container w3-xlarge" >
-		<p class="center">Books</p>
-		<p class="w3-right" align="left">
-			<i class="fa fa-shopping-cart w3-margin-right"></i> <i
-				class="fa fa-search"></i>
-		</p>
-		</header>
-		
-		
-		
-			<table  class="table table-bordered">
-				<thead>
-					<tr>
-						<th>Sno</th>
-						<th>Name</th>
-						<th>Price</th>
-						<th>released_on</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach items="${BOOK_LIST}" var="book">
-						<tr>
-							<td>${book.id}</td>
-							<td>${book.name}</td>
-							<td>${book.price}</td>
-							<td>${book.released_on}</td>
+		<header class="w3-container w3-xlarge">
 
-						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
-		
+
+		<p class="w3-left">Book</p>
+		<p class="w3-right">
+			<a href="../orders/order"
+				class="fa fa-shopping-cart w3-margin-right"></a> <a
+				class="fa fa-search"></a> <a class="fa fa-sign-out"
+				style="margin-left: 10px" href="../users/logout"> </a>
+		</p>
+
+		</header>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Sno</th>
+					<th>Name</th>
+					<th>Price</th>
+					<th>released_on</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${BOOK_LIST}" var="book">
+					<tr>
+						<td>${book.id}</td>
+						<td>${book.name}</td>
+						<td>${book.price}</td>
+						<td>${book.released_on}</td>
+
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+
 
 
 	</div>
