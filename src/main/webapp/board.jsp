@@ -131,7 +131,7 @@ i, a, h1, h2, h3, h4, h5, h6 {
 
 			<div class="w3-col l3 s6">
 				<div class="w3-container">
-					<img src="/w3images/jeans3.jpg" style="width: 100%">
+					<img src="../assests/images/java.jpg" style="width: 100%">
 					<p>
 						Database Management System<br> <b>$20.50</b>
 					</p>
