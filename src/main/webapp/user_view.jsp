@@ -112,6 +112,7 @@ table {
 
 
 	<!-- !PAGE CONTENT! -->
+	
 	<div class="w3-main" style="margin-left: 250px">
 
 		<!-- Push down content on small screens -->
