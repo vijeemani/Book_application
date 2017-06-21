@@ -18,11 +18,11 @@ public class BookService {
 		return bookRepository.findAll();
 	}
 	
-/*	public Book findOne(Long id) {
+public Book findOne(Integer id) {
 		return bookRepository.findOne(id);
 	}
 
-	public List<Book> findByPriceDesc() {
+/*	public List<Book> findByPriceDesc() {
 		return bookRepository.findByOrderByPriceDesc();
 	}
 	

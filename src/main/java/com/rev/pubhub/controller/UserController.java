@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -42,10 +43,11 @@ public class UserController {
 	}
 
 	@PostMapping("/validate")
-	public String authorize(@RequestParam("email") String email, @RequestParam("password") String password) {
+	public String authorize(@RequestParam("email") String email, @RequestParam("password") String password,ModelMap modelMap,HttpSession session) {
 
-		userService.findByEmailAndPassword(email, password);
+		User user =userService.findByEmailAndPassword(email, password);
 		System.out.println("User logedin as " + email);
+		session.setAttribute("LOGGED_IN_USER", user);
 		return "board";
 
 	}

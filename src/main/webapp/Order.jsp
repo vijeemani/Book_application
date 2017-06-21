@@ -76,65 +76,6 @@
 
 
 
-	<div class="container">
-		<h2>Order Form</h2>
-		<form class="form-horizontal" action="/action_page.php">
-			<div class="form-group">
-				<label class="control-label col-sm-2" for="name">Book Name:</label>
-				<select name="item">
-					<c:forEach items="${ORDER_LIST}" var="id">
-						<option value="${id.name}">${id.name}</option>
-					</c:forEach>
-				</select>
-			</div>
-			<div class="form-group">
-				<label class="control-label col-sm-2" for="id">Book Id:</label>
-				<div class="col-sm-10">
-					<input type="number" class="form-control" id="bid"
-						placeholder="Enter book id" name="id">
-				</div>
-
-			</div>
-
-
-			<div class="form-group">
-				<label class="control-label col-sm-2" for="quantity">Book
-					quantity</label>
-				<div class="col-sm-10">
-					<input type="number" name="quantity" min="1" max="5"><br>
-				</div>
-			</div>
-
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<button type="submit" class="btn btn-default">Submit</button>
-				</div>
-			</div>
-		</form>
-
-		<table class="table table-bordered">
-			<thead>
-				<tr>
-					<th>Sno</th>
-					<th>Name</th>
-					<th>Price</th>
-
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach items="${ORDER_LIST}" var="order">
-					<tr>
-						<td>${order.id}</td>
-						<td>${order.name}</td>
-						<td>${order.price}</td>
-
-
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-
-	</div>
 
 
 </body>

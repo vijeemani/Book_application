@@ -52,7 +52,7 @@ p {
 
 table {
 	align: center;
-	margin-top: 30px;
+	margin-top: 50px;
 }
 
 .logo-small {
@@ -132,19 +132,27 @@ table {
 		<table class="table table-bordered">
 			<thead>
 				<tr>
-					<th>Sno</th>
+					<th></th>
+					<th>id</th>
 					<th>Name</th>
 					<th>Price</th>
-					<th>released_on</th>
+				
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach items="${BOOK_LIST}" var="book">
 					<tr>
+					<td>
+					<c:if test = "${book.name=='Core Java'}">
+							<img class="card-img-left" src="../assests/images/java.jpg"
+								width="100" alt="Card image cap">
+						</div>
+						</c:if>
+					</td>
 						<td>${book.id}</td>
-						<td>${book.name}</td>
+						<td><a href="../orders/addtocart/${book.id}">${book.name}</a></td>
 						<td>${book.price}</td>
-						<td>${book.released_on}</td>
+					
 
 					</tr>
 				</c:forEach>

@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import javax.persistence.*;
 
 @Entity
-@Table(name="order_item")
+@Table(name="order")
 public class Order {
 	@Id
 	@GeneratedValue

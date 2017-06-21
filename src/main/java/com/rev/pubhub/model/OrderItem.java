@@ -16,7 +16,7 @@ public class OrderItem {
 	@Id
 	@GeneratedValue
 	@Column(name = "id")
-	private Long id;
+	private Integer id;
 
 	@ManyToOne
 	@JoinColumn(name = "order_id")
@@ -32,11 +32,11 @@ public class OrderItem {
 	//@Column(name="book_id")
 	private Book book;
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
