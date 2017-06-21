@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.rev.pubhub.model.Book;
+import com.rev.pubhub.model.User;
 import com.rev.pubhub.service.BookService;
 
 @Controller
@@ -31,12 +32,13 @@ public class OrderController {
 			return "Order";
 		
 	}
-	@GetMapping("/addtocart/{id}")
-	public String addToCart(@PathVariable("id")Integer id,ModelMap modelMap,HttpSession session){
+	@GetMapping("/{id}")
+	public String addToCart(@PathVariable("id")Long id,ModelMap modelMap,HttpSession session){
+		User loggedInUser = (User) session.getAttribute("LOGGED_IN_USER");
 		System.out.println("ShowBook:" + id);
 		Book book = bookService.findOne(id);
-		modelMap.addAttribute("SELECTED_BOOK", book);
-		return "bookordered";
+			modelMap.addAttribute("SELECTED_BOOK", book);
+		return "orders/bookordered";
 		
 	}
 

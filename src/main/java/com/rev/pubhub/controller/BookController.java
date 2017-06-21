@@ -27,7 +27,7 @@ public class BookController {
 		modelMap.addAttribute("BOOK_LIST",booksList);
 		System.out.println(booksList);
 
-		return "user_view";
+		return "bookDisplay/user_view";
 	}
 	
 	

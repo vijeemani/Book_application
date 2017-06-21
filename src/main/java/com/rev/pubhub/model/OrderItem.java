@@ -22,14 +22,12 @@ public class OrderItem {
 	@JoinColumn(name = "order_id")
 	private Order order;
 
-	
-
 	@Column(name = "quantity")
 	private Integer quantity;
 
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "book_id")
-	//@Column(name="book_id")
+	// @Column(name="book_id")
 	private Book book;
 
 	public Integer getId() {
@@ -63,6 +61,7 @@ public class OrderItem {
 	public void setBook(Book book) {
 		this.book = book;
 	}
+
 	@Override
 	public String toString() {
 		return "OrderItems [id=" + id + ", order=" + order + ", quantity=" + quantity + ", book=" + book + "]";

@@ -18,7 +18,7 @@ public class BookService {
 		return bookRepository.findAll();
 	}
 	
-public Book findOne(Integer id) {
+public Book findOne(Long id) {
 		return bookRepository.findOne(id);
 	}
 

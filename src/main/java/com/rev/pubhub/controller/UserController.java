@@ -1,7 +1,7 @@
 package com.rev.pubhub.controller;
 
 import javax.servlet.http.HttpSession;
-
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.rev.pubhub.jsp.UserRepository;
+
 import com.rev.pubhub.model.User;
 import com.rev.pubhub.service.UserService;
 import com.rev.pubhub.util.EmailUtil;
@@ -25,7 +25,7 @@ public class UserController {
 
 	@GetMapping("/register")
 	public String login() {
-		return "register";
+		return "auth/register";
 	}
 
 	@PostMapping("/save")
@@ -39,16 +39,25 @@ public class UserController {
 
 	@GetMapping("/login")
 	public String login_user() {
-		return "login";
+		return "auth/login";
 	}
 
 	@PostMapping("/validate")
 	public String authorize(@RequestParam("email") String email, @RequestParam("password") String password,ModelMap modelMap,HttpSession session) {
 
 		User user =userService.findByEmailAndPassword(email, password);
-		System.out.println("User logedin as " + email);
-		session.setAttribute("LOGGED_IN_USER", user);
-		return "board";
+		
+		if(user!=null){
+			session.setAttribute("LOGGED_IN_USER", user);
+			System.out.println("User logedin as " + email);
+			return "bookDisplay/board";	
+		}
+		else{
+			modelMap.addAttribute("ERROR_MESSAGE", "Invalid Email Id/Password");
+			return "redirect:../users/login";
+		}
+	
+		
 
 	}
 
